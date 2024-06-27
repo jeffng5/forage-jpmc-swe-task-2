@@ -33,6 +33,8 @@ class Graph extends Component<IProps, {}> {
   componentDidMount() {
     // Get element to attach the table from the DOM.
     const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
+
+    // these set attributes of the graph so it can be displayed
     elem.setAttribute('view', 'y_line');
     elem.setAttribute('column-pivots', '["stock"]');
     elem.setAttribute('row-pivots', '["timestamp"]');

@@ -8,6 +8,7 @@ import './App.css';
  */
 interface IState {
   data: ServerRespond[],
+  //this line hides and shows graph with T/F
   showGraph: boolean,
 }
 
@@ -23,6 +24,7 @@ class App extends Component<{}, IState> {
       // data saves the server responds.
       // We use this state to parse data down to the child element (Graph) as element property
       data: [],
+      // hide graph upon loading of screen
       showGraph: false,
     };
   }
@@ -40,6 +42,7 @@ class App extends Component<{}, IState> {
    * Get new data from server and update the state with the new data
    */
   getDataFromServer() {
+    //setted time in milliseconds to clear interval to remake get request on DataStreamer
     let x = 0;
     const interval = setInterval(()=> {
     DataStreamer.getData((serverResponds: ServerRespond[]) => {
